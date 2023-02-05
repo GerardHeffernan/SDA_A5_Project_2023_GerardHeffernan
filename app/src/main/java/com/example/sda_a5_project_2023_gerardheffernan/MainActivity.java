@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         intro = MediaPlayer.create(this,introTheme);
-            intro.start();
+        intro.setLooping(true);
+        intro.start();
+
 
         VideoView videoView = findViewById(R.id.videoView);
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.nebula;
