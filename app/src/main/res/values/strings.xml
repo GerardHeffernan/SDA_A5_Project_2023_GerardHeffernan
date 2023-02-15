@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SDA_A5_Project_2023_GerardHeffernan</string>
+    <string name="Angel">Angel</string>
+    <string name="Demon">Demon</string>
+    <string name="Psychic">Psychic</string>
+    <string name="Ifrit">Ifrit</string>
+    <string name="Shiva">Shiva</string>
+    <string name="Terra">Terra</string>
+    <string name="randbattle">randBattle</string>
+    <string name="battletypetext">battletypetext</string>
+
+
 </resources>

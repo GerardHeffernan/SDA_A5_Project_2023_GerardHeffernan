@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/Angel"
+        android:padding="0dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/Demon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user"
+        app:srcCompat="@drawable/angel" />
+
+    <ImageButton
+        android:id="@+id/Demon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/Psychic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Angel"
+        app:srcCompat="@drawable/deamon_woman" />
+
+    <ImageButton
+        android:id="@+id/Psychic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/Ifrit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Demon"
+        app:srcCompat="@drawable/psychic" />
+
+    <ImageButton
+        android:id="@+id/Ifrit"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/Shiva"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Psychic"
+        app:srcCompat="@drawable/ifrit" />
+
+    <ImageButton
+        android:id="@+id/Shiva"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/Terra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Ifrit"
+        app:srcCompat="@drawable/snow_woman" />
+
+    <ImageButton
+        android:id="@+id/Terra"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="295dp"
+        android:layout_marginEnd="16dp"
+
+
+        android:layout_marginBottom="88dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Shiva"
+        app:srcCompat="@drawable/leaf" />
+
+    <TextView
+        android:id="@+id/chosen"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginEnd="195dp"
+        android:text="You selected"
+        app:layout_constraintBottom_toTopOf="@+id/PlayerCardUsed"
+        app:layout_constraintEnd_toStartOf="@+id/Psychic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AICard" />
+
+    <TextView
+        android:id="@+id/PlayerCardUsed"
+        android:layout_width="83dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="249dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Psychic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chosen" />
+
+    <TextView
+        android:id="@+id/cpuChosen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="205dp"
+        android:text="AI selected"
+        app:layout_constraintBottom_toTopOf="@+id/AICard"
+        app:layout_constraintEnd_toStartOf="@+id/Terra"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/AICard"
+        android:layout_width="78dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="50dp"
+        android:text=""
+        android:textColor="#F40707"
+        app:layout_constraintBottom_toBottomOf="@+id/aiCard"
+        app:layout_constraintEnd_toStartOf="@+id/aiCard"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpuChosen" />
+
+    <TextView
+        android:id="@+id/computer"
+        android:layout_width="89dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="15dp"
+        android:text="ai"
+        app:layout_constraintBottom_toTopOf="@+id/cpuChosen"
+        app:layout_constraintEnd_toStartOf="@+id/user"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <ImageButton
+        android:id="@+id/aiCard"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="300dp"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/attackButton"
+        app:layout_constraintEnd_toStartOf="@+id/Terra"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toEndOf="@+id/computer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/fire" />
+
+    <Button
+        android:id="@+id/attackButton"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="50dp"
+        android:text="Attack"
+        app:layout_constraintBottom_toTopOf="@+id/resetButton"
+        app:layout_constraintEnd_toStartOf="@+id/Angel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="53dp"
+        android:text="Reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Shiva"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="93dp"
+        android:text="Round"
+        app:layout_constraintBottom_toTopOf="@+id/aiCard"
+        app:layout_constraintEnd_toStartOf="@+id/Terra"
+        app:layout_constraintStart_toEndOf="@+id/AICard"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="97dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/Angel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
