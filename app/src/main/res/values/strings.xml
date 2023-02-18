@@ -7,7 +7,9 @@
     <string name="Shiva">Shiva</string>
     <string name="Terra">Terra</string>
     <string name="randbattle">randBattle</string>
-    <string name="battletypetext">battletypetext</string>
+    <string name="win">You Have Won!</string>
+    <string name="lost">You Have Lost!</string>
+    <string name="draw"> The Battle is a Draw!</string>
 
 
 </resources>

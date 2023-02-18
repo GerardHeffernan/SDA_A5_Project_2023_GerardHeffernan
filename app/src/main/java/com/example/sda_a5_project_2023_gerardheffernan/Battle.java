@@ -88,7 +88,7 @@ public class Battle extends AppCompatActivity {
 
             rounds.setText("Round " + count);
 
-            // randomly pick one of the 5 characters
+            // randomly pick one of the 6 characters
             int rand = (int) (Math.random() * 6 + 1);
 
              /*
@@ -241,6 +241,7 @@ public class Battle extends AppCompatActivity {
                             playerWins++;
                             break;
                     }
+                    break;
                 case 6:
                     cpuAnimon.setImageResource(R.drawable.leaf);
                     cpuselection.setText(getResources().getString(Terra));
@@ -275,10 +276,11 @@ public class Battle extends AppCompatActivity {
 
             // if 6 rounds have elapsed, determine the winner
             if (count == 6 && !fighters.getText().equals("")) {
-                Intent intent = new Intent(Battle.this, BattleResult.class);
+                Intent intent = new Intent(Battle.this,BattleResult.class);
                 battleMusic.pause();
                 if (playerWins > aiWins) {
                     intent.putExtra("result", "win");
+
                 } else if (playerWins < aiWins) {
                     intent.putExtra("result", "loss");
                 } else if (playerWins == aiWins) {
