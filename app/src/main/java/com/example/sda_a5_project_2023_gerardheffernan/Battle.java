@@ -28,6 +28,21 @@ public class Battle extends AppCompatActivity {
     private int aiWins = 0;
     private int playerWins = 0;
 
+             /*  playButton = (Button) findViewById(R.id.play);
+            playButton.setVisibility(View.VISIBLE);
+            playButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //when play is clicked show stop button and hide play button
+                    playButton.setVisibility(View.GONE);
+                    stopButton.setVisibility(View.VISIBLE);
+                }
+            });
+*/
+
+
+
+
     private class MyClick implements View.OnClickListener {
         public void onClick(View v) {
             TextView fighter = (TextView) findViewById(R.id.PlayerCardUsed);
@@ -79,6 +94,10 @@ public class Battle extends AppCompatActivity {
         ImageButton cpuAnimon = (ImageButton) findViewById(R.id.aiCard);
         TextView cpuselection = (TextView) findViewById(R.id.AICard);
 
+
+
+
+
         @Override
         public void onClick(View v) {
             // count is the round, increment with each time fight button is pressed
@@ -100,6 +119,8 @@ public class Battle extends AppCompatActivity {
             5 is
             6 is
             */
+
+
 
             switch (rand) {
                 case 1:

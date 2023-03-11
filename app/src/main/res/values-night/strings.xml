@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="randbattle">randBattle</string>
+    <string name="battletypetext">battletypetext</string>
+    <string name="you_selected">You selected</string>
+    <string name="user_selection">user selection</string>
+    <string name="ai_selected">AI selected</string>
+    <string name="ai_selection">ai_selection</string>
+    <string name="attack">Attack</string>
+    <string name="reset">Reset</string>
+    <string name="round">Round</string>
+</resources>

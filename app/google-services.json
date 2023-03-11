@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1049271230318",
+    "firebase_url": "https://sada5-773e0-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sada5-773e0",
+    "storage_bucket": "sada5-773e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049271230318:android:6e8c4ed18fd11afd462b7f",
+        "android_client_info": {
+          "package_name": "com.example.sda_a5_project_2023_gerardheffernan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049271230318-2bb6u3qdeheoeupc3ovem8ffh6kn64m9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sda_a5_project_2023_gerardheffernan",
+            "certificate_hash": "f4fab36e0224f3654f4dbecb8c71a951dcbf6512"
+          }
+        },
+        {
+          "client_id": "1049271230318-4h3hc2g03t1nsf1009101a5uic16jp5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8PAUIniZlVNZ3dZdDn7rHQ6ACovJdRLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049271230318-4h3hc2g03t1nsf1009101a5uic16jp5n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
