@@ -19,7 +19,67 @@ import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Ifrit;
 import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Shiva;
 import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Terra;
 
+
+
+
+
 public class Battle extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.battle);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        battleMusic = MediaPlayer.create(this, battleTheme);
+        battleMusic.setLooping(true);
+        battleMusic.start();
+        // linking various buttons to implementation classes
+        TextView rounds = (TextView) findViewById(R.id.Round);
+        rounds.setText("Round");
+
+        ImageButton Angel, Demon, Psychic, Ifrit, Shiva, Terra ;
+        Button attackButton;
+        Button resetButton;
+
+        Angel = (ImageButton) findViewById(R.id.Angel);
+
+        Demon = (ImageButton) findViewById(R.id.Demon);
+
+        Psychic = (ImageButton) findViewById(R.id.Psychic);
+
+        Ifrit = (ImageButton) findViewById(R.id.Ifrit);
+
+        Shiva = (ImageButton) findViewById(R.id.Shiva);
+
+        Terra = (ImageButton) findViewById(R.id.Terra);
+
+        attackButton = (Button) findViewById(R.id.attackButton);
+        resetButton = (Button) findViewById(R.id.resetButton);
+
+        Battle.MyClick myClickListener = new Battle.MyClick();
+        Battle.FightClick fightListener = new Battle.FightClick();
+
+        Angel.setOnClickListener(myClickListener);
+        Demon.setOnClickListener(myClickListener);
+        Psychic.setOnClickListener(myClickListener);
+        Ifrit.setOnClickListener(myClickListener);
+        Shiva.setOnClickListener(myClickListener);
+        Terra.setOnClickListener(myClickListener);
+        resetButton.setOnClickListener(myClickListener);
+        attackButton.setOnClickListener(fightListener);
+
+    }
+
+
+
+
+
+
+
+
 
     private MediaPlayer battleMusic;
     int battleTheme = R.raw.orchestra;
@@ -28,46 +88,43 @@ public class Battle extends AppCompatActivity {
     private int aiWins = 0;
     private int playerWins = 0;
 
-             /*  playButton = (Button) findViewById(R.id.play);
-            playButton.setVisibility(View.VISIBLE);
-            playButton.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //when play is clicked show stop button and hide play button
-                    playButton.setVisibility(View.GONE);
-                    stopButton.setVisibility(View.VISIBLE);
-                }
-            });
-*/
-
-
-
 
     private class MyClick implements View.OnClickListener {
         public void onClick(View v) {
+
+
             TextView fighter = (TextView) findViewById(R.id.PlayerCardUsed);
             TextView rounds = (TextView) findViewById(R.id.Round);
             TextView cpu = (TextView) findViewById(R.id.computer);
             TextView player = (TextView) findViewById(R.id.user);
             // depending on image button chosen, populate textview descritpion
             switch(v.getId()){
+
+
                 case R.id.Angel:
+
                     fighter.setText(getResources().getString(Angel));
+
                     break;
                 case R.id.Demon:
                     fighter.setText(getResources().getString(Demon));
+
                     break;
                 case R.id.Psychic:
                     fighter.setText(getResources().getString(Psychic));
+                    v.setEnabled(false);
                     break;
                 case R.id.Ifrit:
                     fighter.setText(getResources().getString(Ifrit));
+                    v.setEnabled(false);
                     break;
                 case R.id.Shiva:
                     fighter.setText(getResources().getString(Shiva));
+                    v.setEnabled(false);
                     break;
                 case R.id.Terra:
                     fighter.setText(getResources().getString(Terra));
+                    v.setEnabled(false);
                     break;
                 case R.id.resetButton:
                     // whenever reset is clicked, reset round and score data
@@ -124,10 +181,18 @@ public class Battle extends AppCompatActivity {
 
             switch (rand) {
                 case 1:
+
                     cpuAnimon.setImageResource(R.drawable.angel);
+
                     cpuselection.setText(getResources().getString(Angel));
-                    switch ((String) fighters.getText()) {
+
+
+                    switch ((String) fighters.getText())
+
+                    {
                         case "Angel":
+
+
                             playerWins++;
                             aiWins++;
                             break;
@@ -313,50 +378,4 @@ public class Battle extends AppCompatActivity {
             }
         }
     }
-            @Override
-            protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                setContentView(R.layout.battle);
-                getSupportActionBar().setDisplayShowTitleEnabled(false);
-                if (getSupportActionBar() != null) {
-                    getSupportActionBar().hide();
-                }
-
-
-
-                battleMusic = MediaPlayer.create(this, battleTheme);
-                battleMusic.setLooping(true);
-                battleMusic.start();
-
-
-
-            // linking various buttons to implementation classes
-            TextView rounds = (TextView) findViewById(R.id.Round);
-            rounds.setText("Round");
-
-            ImageButton Angel, Demon, Psychic, Ifrit, Shiva, Terra ;
-            Button attackButton;
-            Button resetButton;
-
-            Angel = (ImageButton) findViewById(R.id.Angel);
-            Demon = (ImageButton) findViewById(R.id.Demon);
-            Psychic = (ImageButton) findViewById(R.id.Psychic);
-            Ifrit = (ImageButton) findViewById(R.id.Ifrit);
-            Shiva = (ImageButton) findViewById(R.id.Shiva);
-            Terra = (ImageButton) findViewById(R.id.Terra);
-            attackButton = (Button) findViewById(R.id.attackButton);
-            resetButton = (Button) findViewById(R.id.resetButton);
-
-            Battle.MyClick myClickListener = new Battle.MyClick();
-            Battle.FightClick fightListener = new Battle.FightClick();
-
-            Angel.setOnClickListener(myClickListener);
-            Demon.setOnClickListener(myClickListener);
-            Psychic.setOnClickListener(myClickListener);
-            Ifrit.setOnClickListener(myClickListener);
-            Shiva.setOnClickListener(myClickListener);
-            Terra.setOnClickListener(myClickListener);
-            resetButton.setOnClickListener(myClickListener);
-            attackButton.setOnClickListener(fightListener);
-        }
     }

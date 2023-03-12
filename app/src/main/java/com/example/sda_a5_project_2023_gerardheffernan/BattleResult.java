@@ -159,30 +159,13 @@ public class BattleResult extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // save data to firebase
+                FirebaseDatabase userResults = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = userResults.getReference("users result/" + st1);
 
-                //FirebaseDatabase database = FirebaseDatabase.getInstance("https://sda-project-5-default-rtdb.europe-west1.firebasedatabase.app/");
-                //DatabaseReference myRef = database.getReference().child("ABC");
-                //myRef.setValue("try");
+                myRef.setValue(result);
 
-               FirebaseDatabase userResults = FirebaseDatabase.getInstance();
-               DatabaseReference myRef = userResults.getReference("result");
-
-
-
-
-               myRef.setValue(result);
-
-
-
-               System.out.println("button pressed");
-//                myRef.setValue("Hello, World!");
-               // System.out.println("aaaaaa");
-              //  userResults = FirebaseDatabase.getInstance().getReference().child("result");
-                     //       userResults.child("result").child(result).setValue(result);
-
-                        }
-                    });
+            }
+        });
 
     }
 }
