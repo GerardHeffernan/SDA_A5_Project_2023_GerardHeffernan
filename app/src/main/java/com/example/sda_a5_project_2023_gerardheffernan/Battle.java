@@ -1,5 +1,6 @@
 package com.example.sda_a5_project_2023_gerardheffernan;
 
+import android.app.MediaRouteButton;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -19,11 +20,16 @@ import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Ifrit;
 import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Shiva;
 import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Terra;
 
-
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Battle extends AppCompatActivity {
+    ImageButton Angel, Demon, Psychic, Ifrit, Shiva, Terra ;
+    boolean angelSelected, demonSelected, psychicSelected, ifritSelected, shivaSelected, terraSelected;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +46,12 @@ public class Battle extends AppCompatActivity {
         TextView rounds = (TextView) findViewById(R.id.Round);
         rounds.setText("Round");
 
-        ImageButton Angel, Demon, Psychic, Ifrit, Shiva, Terra ;
+
         Button attackButton;
         Button resetButton;
 
         Angel = (ImageButton) findViewById(R.id.Angel);
+        //Angel.setVisibility(View.VISIBLE);
 
         Demon = (ImageButton) findViewById(R.id.Demon);
 
@@ -71,6 +78,16 @@ public class Battle extends AppCompatActivity {
         resetButton.setOnClickListener(myClickListener);
         attackButton.setOnClickListener(fightListener);
 
+
+        // initialize button selection variables to false
+
+        angelSelected = false;
+        demonSelected = false;
+        psychicSelected = false;
+        ifritSelected = false;
+        shivaSelected = false;
+        terraSelected = false;
+
     }
 
 
@@ -90,6 +107,9 @@ public class Battle extends AppCompatActivity {
 
 
     private class MyClick implements View.OnClickListener {
+
+
+
         public void onClick(View v) {
 
 
@@ -100,31 +120,59 @@ public class Battle extends AppCompatActivity {
             // depending on image button chosen, populate textview descritpion
             switch(v.getId()){
 
-
                 case R.id.Angel:
+                    if (!angelSelected) {
+                        fighter.setText(getString(R.string.Angel));
 
-                    fighter.setText(getResources().getString(Angel));
-
+                        angelSelected = true;
+                        Angel.setVisibility(View.INVISIBLE);
+                    }
                     break;
                 case R.id.Demon:
-                    fighter.setText(getResources().getString(Demon));
+                    if (!demonSelected) {
+                        fighter.setText(getString(R.string.Demon));
 
+                        demonSelected = true;
+                        Demon.setVisibility(View.INVISIBLE);
+                    }
                     break;
                 case R.id.Psychic:
-                    fighter.setText(getResources().getString(Psychic));
-                    v.setEnabled(false);
+
+                    if (!psychicSelected) {
+                        fighter.setText(getString(R.string.Psychic));
+
+                        psychicSelected = true;
+                        Psychic.setVisibility(View.INVISIBLE);
+                    }
                     break;
                 case R.id.Ifrit:
-                    fighter.setText(getResources().getString(Ifrit));
-                    v.setEnabled(false);
+
+                    if (!ifritSelected) {
+                        fighter.setText(getString(R.string.Ifrit));
+
+                        ifritSelected = true;
+                        Ifrit.setVisibility(View.INVISIBLE);
+                    }
                     break;
                 case R.id.Shiva:
-                    fighter.setText(getResources().getString(Shiva));
-                    v.setEnabled(false);
+
+                    if (!shivaSelected) {
+
+                        shivaSelected = true;
+                        Shiva.setVisibility(View.INVISIBLE);
+                    }
+
+
                     break;
                 case R.id.Terra:
-                    fighter.setText(getResources().getString(Terra));
-                    v.setEnabled(false);
+
+                    if (!terraSelected) {
+                        fighter.setText(getString(R.string.Terra));
+
+                        terraSelected = true;
+                        Terra.setVisibility(View.INVISIBLE);
+                    }
+
                     break;
                 case R.id.resetButton:
                     // whenever reset is clicked, reset round and score data
@@ -135,10 +183,20 @@ public class Battle extends AppCompatActivity {
                     rounds.setText("Round");
                     cpu.setText("Computer " + Integer.toString(aiWins));
                     player.setText("Player " + Integer.toString(playerWins));
+                    Angel.setVisibility(View.VISIBLE);
+                    Demon.setVisibility(View.VISIBLE);
+                    Psychic.setVisibility(View.VISIBLE);
+                    Ifrit.setVisibility(View.VISIBLE);
+                    Shiva.setVisibility(View.VISIBLE);
+                    Terra.setVisibility(View.VISIBLE);
+
                     break;
                 case R.id.attackButton:
                     if (fighter.getText().equals("")){
                         fighter.setText("\n *Choose a character first");
+
+
+
                     }
             }
         }
@@ -152,7 +210,8 @@ public class Battle extends AppCompatActivity {
         TextView cpuselection = (TextView) findViewById(R.id.AICard);
 
 
-
+        // list of available cases
+        List<Integer> cases = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
 
 
         @Override
@@ -161,11 +220,23 @@ public class Battle extends AppCompatActivity {
             ++count;
             TextView cpu = (TextView) findViewById(R.id.computer);
             TextView player = (TextView) findViewById(R.id.user);
+            TextView atext = (TextView) findViewById(R.id.angel_textView);
+            TextView dtext = (TextView) findViewById(R.id.demon_textView);
+            TextView ptext = (TextView) findViewById(R.id.psychic_textView);
+            TextView itext = (TextView) findViewById(R.id.ifrit_textView);
+            TextView stext = (TextView) findViewById(R.id.shiva_textView);
+            TextView ttext = (TextView) findViewById(R.id.terra_textView);
 
             rounds.setText("Round " + count);
 
-            // randomly pick one of the 6 characters
-            int rand = (int) (Math.random() * 6 + 1);
+
+            // randomly pick one of the available cases
+            int index = (int) (Math.random() * cases.size());
+            int rand = cases.get(index);
+            cases.remove(index); // remove the selected case from the list
+
+
+
 
              /*
             selection is based on the following criterion:
@@ -184,7 +255,11 @@ public class Battle extends AppCompatActivity {
 
                     cpuAnimon.setImageResource(R.drawable.angel);
 
-                    cpuselection.setText(getResources().getString(Angel));
+
+                    cpuselection.setText(getString(R.string.Angel));
+                    atext.setVisibility(View.VISIBLE);
+
+
 
 
                     switch ((String) fighters.getText())
@@ -218,7 +293,13 @@ public class Battle extends AppCompatActivity {
                     break;
                 case 2:
                     cpuAnimon.setImageResource(R.drawable.deamon_woman);
-                    cpuselection.setText(getResources().getString(Demon));
+                    cpuselection.setText(getString(R.string.Demon));
+                    dtext.setVisibility(View.VISIBLE);
+
+
+
+
+
                     switch ((String) fighters.getText()) {
                         case "Angel":
                             playerWins++;
@@ -246,7 +327,13 @@ public class Battle extends AppCompatActivity {
                     break;
                 case 3:
                     cpuAnimon.setImageResource(R.drawable.psychic);
-                    cpuselection.setText(getResources().getString(Psychic));
+
+                    cpuselection.setText(getString(R.string.Psychic));
+                    ptext.setVisibility(View.VISIBLE);
+
+
+
+
                     switch ((String) fighters.getText()) {
                         case "Angel":
                             aiWins++;
@@ -274,7 +361,12 @@ public class Battle extends AppCompatActivity {
                     break;
                 case 4:
                     cpuAnimon.setImageResource(R.drawable.flame);
-                    cpuselection.setText(getResources().getString(Ifrit));
+
+                    cpuselection.setText(getString(R.string.Ifrit));
+                    itext.setVisibility(View.VISIBLE);
+
+
+
                     switch ((String) fighters.getText()) {
                         case "Angel":
                             aiWins++;
@@ -302,7 +394,10 @@ public class Battle extends AppCompatActivity {
                     break;
                 case 5:
                     cpuAnimon.setImageResource(R.drawable.snow_woman);
-                    cpuselection.setText(getResources().getString(Shiva));
+
+                    cpuselection.setText(getString(R.string.Shiva));
+                    stext.setVisibility(View.VISIBLE);
+
                     switch ((String) fighters.getText()) {
                         case "Angel":
                             aiWins++;
@@ -330,7 +425,11 @@ public class Battle extends AppCompatActivity {
                     break;
                 case 6:
                     cpuAnimon.setImageResource(R.drawable.leaf);
-                    cpuselection.setText(getResources().getString(Terra));
+
+                    cpuselection.setText(getString(R.string.Terra));
+                    ttext.setVisibility(View.VISIBLE);
+
+
                     switch ((String) fighters.getText()) {
                         case "Angel":
                             aiWins++;

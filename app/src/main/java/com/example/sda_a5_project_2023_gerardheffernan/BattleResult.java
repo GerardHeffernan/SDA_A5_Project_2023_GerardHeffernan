@@ -29,10 +29,9 @@ import java.util.Map;
 public class BattleResult extends AppCompatActivity {
 
     EditText userNameEdit;
-    Button playAgain, howToPlay, saveData, resetData;
+    Button playAgain, howToPlay, saveData, resetData, score;
     CheckBox checkBox;
     String uName;
-    String userName;
     SharedPreferences sp;
     private MediaPlayer outro;
     int winTheme = R.raw.win_music;
@@ -40,7 +39,6 @@ public class BattleResult extends AppCompatActivity {
     int drawTheme = R.raw.piano_draw;
 
     private DatabaseReference userResults;
-
 
     private class MyClick implements View.OnClickListener {
         public void onClick(View v) {
@@ -58,6 +56,7 @@ public class BattleResult extends AppCompatActivity {
 
                     Intent intent2 = new Intent(BattleResult.this, HowToPlay.class);
                     startActivity(intent2);
+                    break;
             }
         }
     }
@@ -159,14 +158,26 @@ public class BattleResult extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                FirebaseDatabase userResults = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = userResults.getReference("users result/" + st1);
+                // get the Firebase Realtime Database instance
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-                myRef.setValue(result);
+                // get the reference to the user's result node using st1 as the key
+                DatabaseReference userResultRef = database.getReference("userResults/" + st1);
+
+                // create a new child node under the user's result node using a unique key
+                DatabaseReference newResultRef = userResultRef.push();
+
+                // set the result value in the new child node
+                newResultRef.setValue(result);
+
+
+                Intent intent = new Intent(BattleResult.this, ScoreBoardActivity.class);
+                intent.putExtra("st1", st1);
+                intent.putExtra("result", result);
+                startActivity(intent);
 
             }
         });
-
     }
 }
 

@@ -24,7 +24,8 @@
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/Demon"
-        android:scaleType="fitCenter"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/Psychic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Angel"
@@ -36,7 +37,7 @@
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/Psychic"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/Ifrit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Demon"
@@ -49,7 +50,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="2dp"
         android:contentDescription="@string/Ifrit"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/Shiva"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Psychic"
@@ -62,7 +63,7 @@
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/Shiva"
         android:cropToPadding="true"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/Terra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ifrit"
@@ -78,7 +79,7 @@
 
         android:layout_marginBottom="40dp"
         android:contentDescription="@string/Terra"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -166,7 +167,7 @@
         android:layout_marginBottom="91dp"
         android:contentDescription="@string/ai_selection"
         android:padding="0dp"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/chosen"
         app:layout_constraintEnd_toStartOf="@+id/Angel"
         app:layout_constraintHorizontal_bias="0.0"
@@ -219,5 +220,85 @@
         app:layout_constraintBottom_toTopOf="@+id/Angel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/angel_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="173dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        android:text="AI used Angel"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/demon_textView"
+        app:layout_constraintEnd_toStartOf="@+id/Angel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Round" />
+
+    <TextView
+        android:id="@+id/demon_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="42dp"
+        android:text="AI used Demon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/psychic_textView"
+        app:layout_constraintEnd_toStartOf="@+id/Angel"
+        app:layout_constraintStart_toEndOf="@+id/cpuChosen"
+        app:layout_constraintTop_toBottomOf="@+id/angel_textView" />
+
+    <TextView
+        android:id="@+id/psychic_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="38dp"
+        android:text="AI used Psychic"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/ifrit_textView"
+        app:layout_constraintEnd_toStartOf="@+id/Angel"
+        app:layout_constraintStart_toEndOf="@+id/AICard"
+        app:layout_constraintTop_toBottomOf="@+id/demon_textView" />
+
+    <TextView
+        android:id="@+id/ifrit_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="65dp"
+        android:text="AI used Ifrit"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/shiva_textView"
+        app:layout_constraintEnd_toStartOf="@+id/Angel"
+        app:layout_constraintStart_toEndOf="@+id/AICard"
+        app:layout_constraintTop_toBottomOf="@+id/psychic_textView" />
+
+    <TextView
+        android:id="@+id/shiva_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="53dp"
+        android:text="AI used Shiva"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/terra_textView"
+        app:layout_constraintEnd_toStartOf="@+id/Angel"
+        app:layout_constraintStart_toEndOf="@+id/AICard"
+        app:layout_constraintTop_toBottomOf="@+id/ifrit_textView" />
+
+    <TextView
+        android:id="@+id/terra_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="372dp"
+        android:text="AI used Terra"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/attackButton"
+        app:layout_constraintEnd_toStartOf="@+id/Demon"
+        app:layout_constraintStart_toEndOf="@+id/aiCard"
+        app:layout_constraintTop_toBottomOf="@+id/shiva_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

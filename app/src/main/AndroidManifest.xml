@@ -24,6 +24,7 @@
         <activity android:name=".BattleResult" />
         <activity android:name=".HowToPlay" />
         <activity android:name=".Battle" />
+        <activity android:name=".ScoreBoardActivity" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
