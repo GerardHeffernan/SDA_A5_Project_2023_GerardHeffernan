@@ -361,13 +361,14 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="Select a card and then select attack."
+        android:text="@string/select_a_card_and_then_select_attack"
         android:textAllCaps="true"
         android:textIsSelectable="false"
         app:layout_constraintBottom_toTopOf="@+id/attackButton"
         app:layout_constraintEnd_toStartOf="@+id/Ifrit"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/terra_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/terra_textView"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView12"

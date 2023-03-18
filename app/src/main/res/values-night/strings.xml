@@ -30,4 +30,5 @@
     <string name="a_strategic_card_game">A Strategic Card Game</string>
     <string name="battletypetext">battletypetext</string>
     <string name="cards">CARDS</string>
+    <string name="select_a_card_and_then_select_attack">Select a card and then select attack.</string>
 </resources>
