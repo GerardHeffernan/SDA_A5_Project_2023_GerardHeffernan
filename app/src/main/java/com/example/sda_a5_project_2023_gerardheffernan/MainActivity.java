@@ -80,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
         // linking buttons with MyCLick class
         Button Battle, HowToPlay;
 
-        Battle = (Button) findViewById(R.id.button);
-        HowToPlay = (Button) findViewById(R.id.button2);
+        Battle = findViewById(R.id.button);
+        HowToPlay = findViewById(R.id.button2);
 
         MyClick myClickListener = new MainActivity.MyClick();
 
@@ -130,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
         // linking buttons with MyCLick class
         Button Battle, HowToPlay;
 
-        Battle = (Button) findViewById(R.id.button);
-        HowToPlay = (Button) findViewById(R.id.button2);
+        Battle = findViewById(R.id.button);
+        HowToPlay = findViewById(R.id.button2);
 
         MyClick myClickListener = new MainActivity.MyClick();
 

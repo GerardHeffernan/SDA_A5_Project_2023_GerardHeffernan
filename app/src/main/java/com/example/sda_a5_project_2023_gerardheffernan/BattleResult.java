@@ -122,7 +122,7 @@ public class BattleResult extends AppCompatActivity {
         int playerWins = 0;
         // access data from intetn that was passed on to this activity
         String result = getIntent().getExtras().getString("result");
-        TextView resultView = (TextView) findViewById(R.id.textView4);
+        TextView resultView = findViewById(R.id.textView4);
 
 
         // store image view source as variable for manipulation based on outcome

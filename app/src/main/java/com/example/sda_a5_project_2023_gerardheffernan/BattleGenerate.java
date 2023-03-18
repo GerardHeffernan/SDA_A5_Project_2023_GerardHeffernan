@@ -36,7 +36,7 @@ private class MyClick implements View.OnClickListener {
         // creates random battle button and links it to MyClick class
         Button random;
 
-        random = (Button) findViewById(R.id.RandoBattle);
+        random = findViewById(R.id.RandoBattle);
 
         BattleGenerate.MyClick myClickListener = new BattleGenerate.MyClick();
 
