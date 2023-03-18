@@ -28,4 +28,6 @@
     <string name="battle">Battle</string>
     <string name="elements">ELEMENTS</string>
     <string name="a_strategic_card_game">A Strategic Card Game</string>
+    <string name="battletypetext">battletypetext</string>
+    <string name="cards">CARDS</string>
 </resources>

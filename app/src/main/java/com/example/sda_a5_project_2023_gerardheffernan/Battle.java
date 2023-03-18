@@ -46,7 +46,7 @@ public class Battle extends AppCompatActivity {
     private int count = 0;
     private int aiWins = 0;
     private int playerWins = 0;
-    private boolean fighterSelected = false;
+    private boolean fighterSelected = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
