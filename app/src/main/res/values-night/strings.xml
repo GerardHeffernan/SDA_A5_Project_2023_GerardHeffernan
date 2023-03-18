@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="randbattle">randBattle</string>
-    <string name="battletypetext">battletypetext</string>
+
     <string name="you_selected">You selected</string>
     <string name="user_selection">user selection</string>
     <string name="ai_selected">AI selected</string>
@@ -9,4 +9,23 @@
     <string name="attack">Attack</string>
     <string name="reset">Reset</string>
     <string name="round">Round</string>
+    <string name="user">User</string>
+    <string name="result">Result</string>
+    <string name="name">Name</string>
+    <string name="score_board">Score Board</string>
+    <string name="reset_details">Reset Details</string>
+    <string name="play_again">Play Again</string>
+    <string name="enter_your_name_to_upload_score_details">Enter your name to upload score details!</string>
+    <string name="remember_name_for_next_game">Remember name for next game?</string>
+    <string name="how_to_play">How To Play</string>
+    <string name="ai_used_angel">AI used Angel</string>
+    <string name="ai_used_demon">AI used Demon</string>
+    <string name="ai_used_psychic">AI used Psychic</string>
+    <string name="ai_used_ifrit">AI used Ifrit</string>
+    <string name="ai_used_shiva">AI used Shiva</string>
+    <string name="ai_used_terra">AI used Terra</string>
+    <string name="player_card_used">player card used</string>
+    <string name="battle">Battle</string>
+    <string name="elements">ELEMENTS</string>
+    <string name="a_strategic_card_game">A Strategic Card Game</string>
 </resources>

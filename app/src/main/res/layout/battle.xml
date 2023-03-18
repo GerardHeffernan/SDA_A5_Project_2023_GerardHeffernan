@@ -100,7 +100,8 @@
         app:layout_constraintBottom_toTopOf="@+id/PlayerCardUsed"
         app:layout_constraintEnd_toStartOf="@+id/Psychic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aiCard" />
+        app:layout_constraintTop_toBottomOf="@+id/aiCard"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/PlayerCardUsed"
@@ -135,7 +136,8 @@
         app:layout_constraintEnd_toStartOf="@+id/Angel"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/AICard"
@@ -210,7 +212,8 @@
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/user"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/user"
@@ -232,7 +235,7 @@
         android:layout_marginStart="173dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="64dp"
-        android:text="AI used Angel"
+        android:text="@string/ai_used_angel"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -249,7 +252,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="44dp"
         android:layout_marginEnd="42dp"
-        android:text="AI used Demon"
+        android:text="@string/ai_used_demon"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -266,7 +269,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="43dp"
         android:layout_marginEnd="38dp"
-        android:text="AI used Psychic"
+        android:text="@string/ai_used_psychic"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -283,7 +286,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="43dp"
         android:layout_marginEnd="65dp"
-        android:text="AI used Ifrit"
+        android:text="@string/ai_used_ifrit"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -300,7 +303,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="43dp"
         android:layout_marginEnd="53dp"
-        android:text="AI used Shiva"
+        android:text="@string/ai_used_shiva"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -318,7 +321,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="175dp"
-        android:text="AI used Terra"
+        android:text="@string/ai_used_terra"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -340,6 +343,7 @@
         app:layout_constraintEnd_toStartOf="@+id/Ifrit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PlayerCardUsed"
-        app:srcCompat="@drawable/elements" />
+        app:srcCompat="@drawable/elements"
+        android:contentDescription="@string/player_card_used"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

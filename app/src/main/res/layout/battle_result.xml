@@ -34,7 +34,7 @@
         android:ems="10"
         android:fontFamily="serif"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/name"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="20sp"
@@ -42,7 +42,9 @@
         app:layout_constraintBottom_toTopOf="@+id/saveButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:autofillHints="Please Enter your Name"
+        android:hint="@string/name"/>
 
     <Button
         android:id="@+id/saveButton"
@@ -51,7 +53,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Score Board"
+        android:text="@string/score_board"
         app:layout_constraintBottom_toTopOf="@+id/rData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editname" />
@@ -63,7 +65,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Reset Details"
+        android:text="@string/reset_details"
         app:layout_constraintBottom_toTopOf="@+id/howToPlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saveButton" />
@@ -76,7 +78,7 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="32dp"
-        android:text="Play Again"
+        android:text="@string/play_again"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/howToPlay"
         app:layout_constraintHorizontal_bias="1.0"
@@ -91,7 +93,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="80dp"
         android:fontFamily="sans-serif"
-        android:text="Enter your name to upload score details!"
+        android:text="@string/enter_your_name_to_upload_score_details"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -110,12 +112,13 @@
         android:layout_marginTop="250dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
-        android:text="Remember name for next game?"
+        android:text="@string/remember_name_for_next_game"
         app:layout_constraintBottom_toTopOf="@+id/playAgain"
         app:layout_constraintEnd_toStartOf="@+id/rData"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editname" />
+        app:layout_constraintTop_toBottomOf="@+id/editname"
+        tools:ignore="TextSizeCheck" />
 
     <Button
         android:id="@+id/howToPlay"
@@ -124,7 +127,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
-        android:text="How To Play"
+        android:text="@string/how_to_play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rData" />
