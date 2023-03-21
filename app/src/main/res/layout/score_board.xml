@@ -18,7 +18,7 @@
             android:fontFamily="sans-serif"
             android:text="@string/user"
             android:textAllCaps="true"
-            android:textColor="#000000"
+            android:textColor="#4CAF50"
             android:textSize="34sp"
             android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
         android:fontFamily="sans-serif"
         android:text="@string/result"
         android:textAllCaps="true"
-        android:textColor="#000000"
+        android:textColor="#4CAF50"
         android:textSize="34sp"
         android:textStyle="bold" />
 

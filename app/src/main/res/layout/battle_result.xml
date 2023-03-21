@@ -15,7 +15,7 @@
         android:fontFamily="@font/tangerine"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/black"
+        android:textColor="#4CAF50"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView11"

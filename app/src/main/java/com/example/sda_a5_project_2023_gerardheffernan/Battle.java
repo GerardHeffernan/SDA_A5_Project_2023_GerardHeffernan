@@ -1,6 +1,6 @@
 package com.example.sda_a5_project_2023_gerardheffernan;
 
-import android.app.MediaRouteButton;
+
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -11,15 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Angel;
-import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Demon;
-import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Psychic;
-import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Ifrit;
-import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Shiva;
-import static com.example.sda_a5_project_2023_gerardheffernan.R.string.Terra;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,17 +30,17 @@ public class Battle extends AppCompatActivity {
     boolean shivaUsed = false;
     boolean terraUsed = false;
 
-    boolean fighterUsed = false;
+
     ImageButton Angel, Demon, Psychic, Ifrit, Shiva, Terra;
-    ImageView playerCard;
+
     boolean angelSelected, demonSelected, psychicSelected, ifritSelected, shivaSelected, terraSelected;
     int battleTheme = R.raw.orchestra;
-    TextView fighters;
+
     private MediaPlayer battleMusic;
     private int count = 0;
     private int aiWins = 0;
     private int playerWins = 0;
-    private boolean fighterSelected = true;
+    private boolean fighterSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,43 +100,28 @@ public class Battle extends AppCompatActivity {
         shivaSelected = false;
         terraSelected = false;
 
+
     }
 
     private class MyClick implements View.OnClickListener {
 
-        TextView cpu = findViewById(R.id.computer);
-        TextView player = findViewById(R.id.user);
-        TextView atext = findViewById(R.id.angel_textView);
-        TextView dtext = findViewById(R.id.demon_textView);
-        TextView ptext = findViewById(R.id.psychic_textView);
-        TextView itext = findViewById(R.id.ifrit_textView);
-        TextView stext = findViewById(R.id.shiva_textView);
-        TextView ttext = findViewById(R.id.terra_textView);
+
         ImageView playerCard = findViewById(R.id.imageView4);
-        ImageButton aiCard = findViewById(R.id.aiCard);
+
 
 
         public void onClick(View v) {
 
             TextView fighters = findViewById(R.id.PlayerCardUsed);
-            TextView rounds = findViewById(R.id.Round);
-            TextView cpu = findViewById(R.id.computer);
-            TextView player = findViewById(R.id.user);
-            // depending on image button chosen, populate textview descritpion
-            TextView atext = findViewById(R.id.angel_textView);
-            TextView dtext = findViewById(R.id.demon_textView);
-            TextView ptext = findViewById(R.id.psychic_textView);
-            TextView itext = findViewById(R.id.ifrit_textView);
-            TextView stext = findViewById(R.id.shiva_textView);
-            TextView ttext = findViewById(R.id.terra_textView);
+
 
             switch (v.getId()) {
                 case R.id.Angel:
                     if (!angelSelected) {
                         fighters.setText(getString(R.string.Angel));
                         playerCard.setImageResource(R.drawable.angel_new);
-                        angelSelected = true;
-                        Angel.setVisibility(View.INVISIBLE);
+
+
                     }
                     break;
                 case R.id.Demon:
@@ -150,7 +129,6 @@ public class Battle extends AppCompatActivity {
                         fighters.setText(getString(R.string.Demon));
                         playerCard.setImageResource(R.drawable.deamon_woman);
                         demonSelected = true;
-                        Demon.setVisibility(View.INVISIBLE);
                     }
                     break;
                 case R.id.Psychic:
@@ -158,7 +136,7 @@ public class Battle extends AppCompatActivity {
                         fighters.setText(getString(R.string.Psychic));
                         playerCard.setImageResource(R.drawable.psychic);
                         psychicSelected = true;
-                        Psychic.setVisibility(View.INVISIBLE);
+
                     }
                     break;
                 case R.id.Ifrit:
@@ -166,7 +144,7 @@ public class Battle extends AppCompatActivity {
                         fighters.setText(getString(R.string.Ifrit));
                         playerCard.setImageResource(R.drawable.ifrit);
                         ifritSelected = true;
-                        Ifrit.setVisibility(View.INVISIBLE);
+
                     }
                     break;
                 case R.id.Shiva:
@@ -174,7 +152,7 @@ public class Battle extends AppCompatActivity {
                         fighters.setText(getString(R.string.Shiva));
                         playerCard.setImageResource(R.drawable.snow_woman);
                         shivaSelected = true;
-                        Shiva.setVisibility(View.INVISIBLE);
+
                     }
                     break;
                 case R.id.Terra:
@@ -182,7 +160,7 @@ public class Battle extends AppCompatActivity {
                         fighters.setText(getString(R.string.Terra));
                         playerCard.setImageResource(R.drawable.leaf);
                         terraSelected = true;
-                        Terra.setVisibility(View.INVISIBLE);
+
                     }
                     break;
                 case R.id.attackButton:
@@ -194,7 +172,6 @@ public class Battle extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "You cannot use the same fighter twice", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    fighterSelected = true;
             }
         }
     }
