@@ -141,7 +141,7 @@ public class Battle extends AppCompatActivity {
                     break;
                 case R.id.Ifrit:
                     if (!ifritSelected) {
-                        fighters.setText(getString(R.string.Ifrit));
+                        fighters.setText(getString(R.string.Fire));
                         playerCard.setImageResource(R.drawable.ifrit);
                         ifritSelected = true;
 
@@ -352,7 +352,7 @@ public class Battle extends AppCompatActivity {
                     break;
                 case 4:
                     cpuAnimon.setImageResource(R.drawable.flame);
-                    cpuselection.setText(getString(R.string.Ifrit));
+                    cpuselection.setText(getString(R.string.Fire));
                     itext.setVisibility(View.VISIBLE);
                     switch ((String) fighters.getText()) {
                         case "Angel":

@@ -49,7 +49,7 @@
         android:layout_height="80dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="2dp"
-        android:contentDescription="@string/Ifrit"
+        android:contentDescription="@string/Fire"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/Shiva"
         app:layout_constraintEnd_toEndOf="parent"
