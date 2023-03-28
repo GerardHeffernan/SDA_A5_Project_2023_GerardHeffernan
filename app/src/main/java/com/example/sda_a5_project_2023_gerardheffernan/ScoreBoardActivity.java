@@ -17,13 +17,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/*
+This class creates a scoreboard based on the top 5 results from users playing the game.
+ */
+
 public class ScoreBoardActivity extends AppCompatActivity {
+
+    //declaring the variables and database reference
     private DatabaseReference userResults;
     TextView User, Result;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.score_board);
+
+
             User = findViewById(R.id.textView8);
             Result = findViewById(R.id.textView9);
             String st1 = getIntent().getStringExtra("st1");
@@ -51,12 +59,14 @@ public class ScoreBoardActivity extends AppCompatActivity {
                     usersText.insert(0, data.getKey() + "\n");
                     resultsText.insert(0, data.getValue() + "\n");
                 }
+                // Set the User and Result TextViews to the top 5 results
                 User.setText(usersText.toString());
                 Result.setText(resultsText.toString());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                // If there is an error getting the data, log it
                 Log.d("Firebase Error", error.getMessage());
             }
         });

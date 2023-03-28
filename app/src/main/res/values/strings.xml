@@ -4,8 +4,8 @@
     <string name="Demon">Demon</string>
     <string name="Psychic">Psychic</string>
     <string name="Fire">Fire</string>
-    <string name="Shiva">Ice</string>
-    <string name="Terra">Earth</string>
+    <string name="Ice">Ice</string>
+    <string name="Earth">Earth</string>
     <string name="randbattle">randBattle</string>
     <string name="win">You Have Won!</string>
     <string name="lost">You Have Lost!</string>

@@ -61,7 +61,7 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:layout_marginEnd="16dp"
-        android:contentDescription="@string/Shiva"
+        android:contentDescription="@string/Ice"
         android:cropToPadding="true"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/Terra"
@@ -78,7 +78,7 @@
 
 
         android:layout_marginBottom="173dp"
-        android:contentDescription="@string/Terra"
+        android:contentDescription="@string/Earth"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

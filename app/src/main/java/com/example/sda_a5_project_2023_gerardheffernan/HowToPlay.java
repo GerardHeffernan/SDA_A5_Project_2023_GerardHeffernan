@@ -5,6 +5,10 @@ import android.os.Bundle;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
+/*
+This class explains how the game works to the user in a clear visual way.
+ */
+
 public class HowToPlay extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {

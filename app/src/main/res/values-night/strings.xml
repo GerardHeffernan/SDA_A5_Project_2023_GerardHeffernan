@@ -21,9 +21,9 @@
     <string name="ai_used_angel">AI used Angel</string>
     <string name="ai_used_demon">AI used Demon</string>
     <string name="ai_used_psychic">AI used Psychic</string>
-    <string name="ai_used_ifrit">AI used Ifrit</string>
-    <string name="ai_used_shiva">AI used Shiva</string>
-    <string name="ai_used_terra">AI used Terra</string>
+    <string name="ai_used_ifrit">AI used Fire</string>
+    <string name="ai_used_shiva">AI used Ice</string>
+    <string name="ai_used_terra">AI used Earth</string>
     <string name="player_card_used">player card used</string>
     <string name="battle">Battle</string>
     <string name="elements">ELEMENTS</string>

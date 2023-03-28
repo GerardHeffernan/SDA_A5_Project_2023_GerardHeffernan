@@ -26,8 +26,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BattleResult extends AppCompatActivity {
 
+/**
+ * This class handles the Battle Result screen of the app.
+ * It displays the result of the battle and provides
+ * buttons for the user to play again, view how to play,
+ * save their result to Firebase Realtime Database, reset their
+ *  user data, and check a checkbox to save their username.
+ */
+public class BattleResult extends AppCompatActivity {
+    // Declare variables
     EditText userNameEdit;
     Button playAgain, howToPlay, saveData, resetData, score;
     CheckBox checkBox;
@@ -39,6 +47,10 @@ public class BattleResult extends AppCompatActivity {
     int drawTheme = R.raw.piano_draw;
 
     private DatabaseReference userResults;
+
+    /**
+     * This class implements a click listener for the buttons in the activity.
+     */
 
     private class MyClick implements View.OnClickListener {
         public void onClick(View v) {
@@ -61,15 +73,18 @@ public class BattleResult extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * This method initializes the activity and sets up its UI components.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.battle_result);
+        // Remove title from action bar
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
-
+        // Get references to UI components
         playAgain = findViewById(R.id.playAgain);
         howToPlay = findViewById(R.id.howToPlay);
 
@@ -88,22 +103,27 @@ public class BattleResult extends AppCompatActivity {
         resetData = findViewById(R.id.rData);
         checkBox = findViewById(R.id.checkBox);
 
+
+        // Initialize shared preferences
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
+
+        // Load the user's name from shared preferences
         String st1 = prefs.getString("N", "");
         userNameEdit.setText(st1);
+        // Set up checkbox to save the user's name
         checkBox.setOnClickListener(v -> {
 
                     if (checkBox.isChecked()) {
-                        //Save the UserId
+                        // Save the user's name to shared preferences
                         uName = userNameEdit.getText().toString();
 
                         editor.putString("N", uName);
 
                         editor.commit();
                         Log.d("Test 1", "onClick: ");
-
+                        // Clear the saved data in shared preferences
                     } else {
                         editor.putString("I", "");
                         editor.putString("E", "");
@@ -113,6 +133,7 @@ public class BattleResult extends AppCompatActivity {
                     }
                 }
         );
+        // Set up button to reset the saved data
         resetData.setOnClickListener(v -> {
             Log.d("Test 3", "onClick: Cleared");
             userNameEdit.getText().clear();

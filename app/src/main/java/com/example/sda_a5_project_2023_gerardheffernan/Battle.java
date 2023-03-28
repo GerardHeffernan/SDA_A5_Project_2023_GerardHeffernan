@@ -19,10 +19,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+Thia ia the battle activity where a user plays against an AI.
+ */
 
 public class Battle extends AppCompatActivity {
 
-
+    // variables to keep track of whether certain fighters have been selected or not
     boolean angelUsed = false;
     boolean demonUsed = false;
     boolean psychicUsed = false;
@@ -31,56 +34,56 @@ public class Battle extends AppCompatActivity {
     boolean terraUsed = false;
 
 
+    // variables to reference the ImageButton views for each fighter
     ImageButton Angel, Demon, Psychic, Ifrit, Shiva, Terra;
-
+    // variables to keep track of which fighter has been selected
     boolean angelSelected, demonSelected, psychicSelected, ifritSelected, shivaSelected, terraSelected;
+    // variable to store the id of the background music for the battle
     int battleTheme = R.raw.orchestra;
+    // variables to control the background music
+
 
     private MediaPlayer battleMusic;
+    // variables to keep track of the number of rounds won by the AI and the player
     private int count = 0;
     private int aiWins = 0;
     private int playerWins = 0;
+
+    // variable to keep track of whether a fighter has been selected or not
     private boolean fighterSelected = false;
 
-    @Override
+    // This method is called when the activity is created
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // Set the layout of the activity to battle.xml
         setContentView(R.layout.battle);
+       // Hide the title bar
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
+       // Load and start playing the background music for the battle
         battleMusic = MediaPlayer.create(this, battleTheme);
         battleMusic.setLooping(true);
         battleMusic.start();
-        // linking various buttons to implementation classes
+       // Initialize variables to reference various UI elements
         TextView rounds = findViewById(R.id.Round);
         rounds.setText("Round");
-
-
         Button attackButton;
-        Button resetButton;
-
         Angel = findViewById(R.id.Angel);
-        //Angel.setVisibility(View.VISIBLE);
-
         Demon = findViewById(R.id.Demon);
-
         Psychic = findViewById(R.id.Psychic);
-
         Ifrit = findViewById(R.id.Ifrit);
-
         Shiva = findViewById(R.id.Shiva);
-
         Terra = findViewById(R.id.Terra);
-
         attackButton = findViewById(R.id.attackButton);
 
-
+       // Create instances of the MyClick and FightClick classes
         Battle.MyClick myClickListener = new Battle.MyClick();
         Battle.FightClick fightListener = new Battle.FightClick();
 
+       // Set the onClickListener for each ImageButton view to myClickListener
         Angel.setOnClickListener(myClickListener);
         Demon.setOnClickListener(myClickListener);
         Psychic.setOnClickListener(myClickListener);
@@ -88,11 +91,11 @@ public class Battle extends AppCompatActivity {
         Shiva.setOnClickListener(myClickListener);
         Terra.setOnClickListener(myClickListener);
 
+       // Set the onClickListener for the attack button to fightListener
         attackButton.setOnClickListener(fightListener);
 
 
-        // initialize button selection variables to false
-
+       // Initialize all of the fighter selection variables to false
         angelSelected = false;
         demonSelected = false;
         psychicSelected = false;
@@ -103,24 +106,25 @@ public class Battle extends AppCompatActivity {
 
     }
 
+    // This is the MyClick class, which implements the OnClickListener interface
     private class MyClick implements View.OnClickListener {
 
-
+// Variable to reference the ImageView for the player's selected fighter
         ImageView playerCard = findViewById(R.id.imageView4);
 
 
-
+        // This method is called when a fighter is clicked
         public void onClick(View v) {
 
+            // Variable to reference the TextView for the fighter that the player has selected
             TextView fighters = findViewById(R.id.PlayerCardUsed);
 
-
+            // Determine which fighter was clicked based on the id of the view
             switch (v.getId()) {
                 case R.id.Angel:
                     if (!angelSelected) {
                         fighters.setText(getString(R.string.Angel));
                         playerCard.setImageResource(R.drawable.angel_new);
-
 
                     }
                     break;
@@ -136,7 +140,6 @@ public class Battle extends AppCompatActivity {
                         fighters.setText(getString(R.string.Psychic));
                         playerCard.setImageResource(R.drawable.psychic);
                         psychicSelected = true;
-
                     }
                     break;
                 case R.id.Ifrit:
@@ -144,20 +147,18 @@ public class Battle extends AppCompatActivity {
                         fighters.setText(getString(R.string.Fire));
                         playerCard.setImageResource(R.drawable.ifrit);
                         ifritSelected = true;
-
                     }
                     break;
                 case R.id.Shiva:
                     if (!shivaSelected) {
-                        fighters.setText(getString(R.string.Shiva));
+                        fighters.setText(getString(R.string.Ice));
                         playerCard.setImageResource(R.drawable.snow_woman);
                         shivaSelected = true;
-
                     }
                     break;
                 case R.id.Terra:
                     if (!terraSelected) {
-                        fighters.setText(getString(R.string.Terra));
+                        fighters.setText(getString(R.string.Earth));
                         playerCard.setImageResource(R.drawable.leaf);
                         terraSelected = true;
 
@@ -172,6 +173,7 @@ public class Battle extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "You cannot use the same fighter twice", Toast.LENGTH_SHORT).show();
                         return;
                     }
+                    fighterSelected = true;
             }
         }
     }
@@ -216,21 +218,21 @@ public class Battle extends AppCompatActivity {
                         psychicUsed = true;
                     }
                     break;
-                case "Ifrit":
+                case "Fire":
                     if (ifritUsed) {
                         fighterUsed = true;
                     } else {
                         ifritUsed = true;
                     }
                     break;
-                case "Shiva":
+                case "Ice":
                     if (shivaUsed) {
                         fighterUsed = true;
                     } else {
                         shivaUsed = true;
                     }
                     break;
-                case "Terra":
+                case "Earth":
                     if (terraUsed) {
                         fighterUsed = true;
                     } else {
@@ -307,15 +309,15 @@ public class Battle extends AppCompatActivity {
                         case "Psychic":
                             aiWins++;
                             break;
-                        case "Ifrit":
+                        case "Fire":
                             aiWins++;
                             playerWins++;
                             break;
-                        case "Shiva":
+                        case "Ice":
                             playerWins++;
                             aiWins++;
                             break;
-                        case "Terra":
+                        case "Earth":
                             playerWins++;
                             aiWins++;
                             break;
@@ -336,15 +338,15 @@ public class Battle extends AppCompatActivity {
                             aiWins++;
                             playerWins++;
                             break;
-                        case "Ifrit":
+                        case "Fire":
                             aiWins++;
                             playerWins++;
                             break;
-                        case "Shiva":
+                        case "Ice":
                             playerWins++;
                             aiWins++;
                             break;
-                        case "Terra":
+                        case "Earth":
                             playerWins++;
                             aiWins++;
                             break;
@@ -367,21 +369,21 @@ public class Battle extends AppCompatActivity {
                             aiWins++;
                             playerWins++;
                             break;
-                        case "Ifrit":
+                        case "Fire":
                             aiWins++;
                             playerWins++;
                             break;
-                        case "Shiva":
+                        case "Ice":
                             playerWins++;
                             break;
-                        case "Terra":
+                        case "Earth":
                             aiWins++;
                             break;
                     }
                     break;
                 case 5:
                     cpuAnimon.setImageResource(R.drawable.snow_woman);
-                    cpuselection.setText(getString(R.string.Shiva));
+                    cpuselection.setText(getString(R.string.Ice));
                     stext.setVisibility(View.VISIBLE);
                     switch ((String) fighters.getText()) {
                         case "Angel":
@@ -396,21 +398,21 @@ public class Battle extends AppCompatActivity {
                             aiWins++;
                             playerWins++;
                             break;
-                        case "Ifrit":
+                        case "Fire":
                             aiWins++;
                             break;
-                        case "Shiva":
+                        case "Ice":
                             playerWins++;
                             aiWins++;
                             break;
-                        case "Terra":
+                        case "Earth":
                             playerWins++;
                             break;
                     }
                     break;
                 case 6:
                     cpuAnimon.setImageResource(R.drawable.leaf);
-                    cpuselection.setText(getString(R.string.Terra));
+                    cpuselection.setText(getString(R.string.Earth));
                     ttext.setVisibility(View.VISIBLE);
                     switch ((String) fighters.getText()) {
                         case "Angel":
@@ -425,13 +427,13 @@ public class Battle extends AppCompatActivity {
                             aiWins++;
                             playerWins++;
                             break;
-                        case "Ifrit":
+                        case "Fire":
                             playerWins++;
                             break;
-                        case "Shiva":
+                        case "Ice":
                             aiWins++;
                             break;
-                        case "Terra":
+                        case "Earth":
                             aiWins++;
                             playerWins++;
                             break;
