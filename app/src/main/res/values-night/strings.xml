@@ -34,4 +34,7 @@
     <string name="fire_is_level_against_demon_psychic_and_angel">FIRE is level against DEMON,PSYCHIC and ANGEL</string>
     <string name="ice_is_level_against_demon_psychic_and_angel">ICE is level against DEMON,PSYCHIC and ANGEL</string>
     <string name="earth_is_level_against_demon_psychic_and_angel">EARTH is level against DEMON,PSYCHIC and ANGEL</string>
+    <string name="score_a_point_by_using_the_strong_element_against_its_weaker_type">Score a point by using the strong element against its weaker type</string>
+    <string name="the_3_elements_that_are_above_are_even_to_the_elements_that_are_below">The 3 Elements that are above are even to the Elements that are below</string>
+    <string name="using_even_elements_against_each_other_grants_both_players_a_point">Using even Elements against each other grants both players a point</string>
 </resources>
