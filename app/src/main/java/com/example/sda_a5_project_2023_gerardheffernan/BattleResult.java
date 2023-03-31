@@ -4,6 +4,7 @@ import static com.example.sda_a5_project_2023_gerardheffernan.R.string.draw;
 import static com.example.sda_a5_project_2023_gerardheffernan.R.string.lost;
 import static com.example.sda_a5_project_2023_gerardheffernan.R.string.win;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +34,7 @@ import java.util.Map;
  * It displays the result of the battle and provides
  * buttons for the user to play again, view how to play,
  * save their result to Firebase Realtime Database, reset their
- *  user data, and check a checkbox to save their username.
+ * user data, and check a checkbox to save their username.
  */
 public class BattleResult extends AppCompatActivity {
     // Declare variables

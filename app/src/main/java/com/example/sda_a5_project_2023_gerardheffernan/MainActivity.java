@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
 
     private class MyClick implements View.OnClickListener {
         public void onClick(View v) {
-            switch(v.getId()){
+            switch (v.getId()) {
                 // start Battle activity when button is clicked
                 case R.id.button:
-                    Intent intent = new Intent(MainActivity.this,Battle.class);
+                    Intent intent = new Intent(MainActivity.this, Battle.class);
                     startActivity(intent);
                     // pause the intro song when starting the Battle activity
                     intro.pause();
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 // start HowToPlay activity when button is clicked
                 case R.id.button2:
 
-                    Intent intent2 = new Intent(MainActivity.this,HowToPlay.class);
+                    Intent intent2 = new Intent(MainActivity.this, HowToPlay.class);
                     startActivity(intent2);
             }
         }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Initialize and start the intro song
-        intro = MediaPlayer.create(this,introTheme);
+        intro = MediaPlayer.create(this, introTheme);
         intro.setLooping(true);
         intro.start();
 
@@ -130,10 +130,9 @@ public class MainActivity extends AppCompatActivity {
 
     // This method is called when the Main activity is resumed
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         setContentView(R.layout.activity_main);
-
 
 
         // Initialize and start the background videos

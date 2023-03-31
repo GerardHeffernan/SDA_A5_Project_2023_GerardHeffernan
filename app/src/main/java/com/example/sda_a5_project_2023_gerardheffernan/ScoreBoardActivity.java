@@ -26,22 +26,23 @@ public class ScoreBoardActivity extends AppCompatActivity {
     //declaring the variables and database reference
     private DatabaseReference userResults;
     TextView User, Result;
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.score_board);
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.score_board);
 
 
-            User = findViewById(R.id.textView8);
-            Result = findViewById(R.id.textView9);
-            String st1 = getIntent().getStringExtra("st1");
-            String result = getIntent().getStringExtra("result");
-            User.setText(st1);
-            Result.setText(result);
-            userResults = FirebaseDatabase.getInstance().getReference().child("user_results");
-            updateScoreboard(st1, result);
+        User = findViewById(R.id.textView8);
+        Result = findViewById(R.id.textView9);
+        String st1 = getIntent().getStringExtra("st1");
+        String result = getIntent().getStringExtra("result");
+        User.setText(st1);
+        Result.setText(result);
+        userResults = FirebaseDatabase.getInstance().getReference().child("user_results");
+        updateScoreboard(st1, result);
 
-        }
+    }
 
     private void updateScoreboard(String st1, String result) {
         User = findViewById(R.id.textView8);
